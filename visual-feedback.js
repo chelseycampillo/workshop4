@@ -83,8 +83,8 @@ function draw() {
   noStroke();
   fill(220);
 	if (playingC) {
-    fill('green');
-    rect(0, 0, width/4, height);
+    fill(34,233,100);
+    ellipse(50,50, 25,25); cc
   }
   if (playingG) {
     fill('red');
