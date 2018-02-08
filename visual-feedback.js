@@ -40,7 +40,7 @@ var playingC, playingG, playingA, playingF, playingE, playingD;
 
 function setup() {
   createCanvas (400,400);
-  background('blue');
+  background(19,30,85);
   
   oscC = new p5.Oscillator();
   oscC.setType('triangle');
@@ -81,7 +81,6 @@ function setup() {
 
 function draw() {
   noStroke();
-  background(120);
   fill(220);
 	if (playingC) {
     fill('green');
