@@ -12,19 +12,18 @@ function setup() {
   martian.setVolume(0.1);
   car.setVolume(0.1);
   chime.setVolume(0.1);
-  colorMode(HSB);
   createCanvas(100, 100);
 }
 
 function draw() {
   if (martian.isPlaying()) {
-    background(120);
+    background('green');
   } 
   if (car.isPlaying()){
-    background(0,50,50);
+    background('red');
   }
   if(chime.isPlaying()) {
-     background(210);
+     background('blue');
 	}
 }
 
@@ -33,10 +32,10 @@ function keyPressed() {
   if (key == 'M') {
   	martian.play();
 }
-  if (key == 'R') {
+  else if (key == 'R') {
     car.play();
   }
-  if (key == 'C') {
+  else if (key == 'C') {
     chime.play();
   }
 }
