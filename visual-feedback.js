@@ -5,15 +5,10 @@ var freqF = 349;
 var freqE = 329;
 var freqD = 294;
 
-
+var playingC, playingG, playingA, playingF, playingE, playingD;
 var oscC, oscG, oscA, oscF, oscE, oscD;
 
-var playingC = false;
-var playingG = false;
-var playingA = false;
-var playingF = false;
-var playingE = false;
-var playingD = false;
+var playing = false;
 
 function setup() {
   createCanvas (400,400);
