@@ -78,6 +78,8 @@ function setup() {
   oscD.start();
 }
 
+
+
 function draw() {
   noStroke();
   fill(220);
@@ -85,7 +87,7 @@ function draw() {
     fill(34,233,100);
     ellipse(50,50, 25,25); 
     fill('white');
-    text('C', 45, 50);
+    text('C', 47, 53);
   }
   if (playingG) {
     fill(52, 123, 229);
@@ -95,16 +97,28 @@ function draw() {
     
   }
   if (playingA) {
-    rect(width/2, 0, width/4, height);
+    fill('red');
+    ellipse(250, 150, 80, 80);
+    fill('white');
+    text('A', 250, 150);
   }
   if (playingF) {
-    rect(3*width/4, 0, width/4, height);
+    fill('green');
+    ellipse(180, 100, 80, 80);
+    fill('white');
+    text('F', 180, 100);
   }
   if (playingE) {
-    rect(3*width/4, 0, width/4, height);
+    fill(52, 123, 229);
+    ellipse(180, 200, 80, 80);
+    fill('white');
+    text('E', 180, 200);
   }
   if (playingD) {
-    rect(3*width/4, 0, width/4, height);
+    fill(52, 123, 229);
+    ellipse(250, 250, 80, 80);
+    fill('white');
+    text('D', 250, 250);
   }
   if (floor(millis()/250) % 2 == 0) {
     fill(0);
