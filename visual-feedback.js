@@ -1,30 +1,3 @@
-// 1. Visual output per-key.
-// 2. 
-
-/*
-  Visual/mouse-based input
-  Tracking of state (challenge?) -- keypress state? Last key pressed?
-  Visual output of how long key is pressed for?
-  Visual metronome -- flash every 1/4 second, e.g.
-  
-  Volume control! (global volume?)
-  Waveform change based on keypress?
-  Frequency based on mouse. (Octave shift as a challenge? 0.5 vs. 2 vs. 4 -- superchallenge using pow?)
-  
-  Match color with frequency
-  Draw a visual score, interpret score based on keys
-  
-  
-  
-  Ideas for directions you might want to consider:
-	  "recording" and layering of loops.
-    Different synthesis? Waveforms/etc?
-    sustain "pedal"
-    vibrato, or ASDR
-    fugue machine
-*/
-
-
 var freqC = 261;
 var freqG = 392;
 var freqA = 440;
@@ -35,7 +8,12 @@ var freqD = 294;
 
 var oscC, oscG, oscA, oscF, oscE, oscD;
 
-var playingC, playingG, playingA, playingF, playingE, playingD;
+var playingC = false;
+var playingG = false;
+var playingA = false;
+var playingF = false;
+var playingE = false;
+var playingD = false;
 
 function setup() {
   createCanvas (400,400);
@@ -87,7 +65,7 @@ function draw() {
     fill(34,233,100);
     ellipse(50,50, 25,25); 
     fill('white');
-    text('C', 47, 53);
+    text('C',47,53);
   }
   if (playingG) {
     fill(52, 123, 229);
@@ -120,12 +98,6 @@ function draw() {
     fill('white');
     text('D', 250, 250);
   }
-  if (floor(millis()/250) % 2 == 0) {
-    fill(0);
-  } else {
-    fill(255);
-  }
-  rect(width-10, height-10, 10, 10);
 }
 
 function keyPressed() {
@@ -152,6 +124,7 @@ function keyPressed() {
   }
   if (osc) {
     osc.amp(0.5, 0.1);
+    playing = true;
   }
 }
 
@@ -179,9 +152,6 @@ function keyReleased() {
   }
   if (osc) {
     osc.amp(0, 0.5);
+    playing = false;
   }
-}
-
-function mouseMoved() {
-  oscA.freq(pow(2, floor(map(mouseX, 0, width, 0, 4))) * freqA);
 }
