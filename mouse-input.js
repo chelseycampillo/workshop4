@@ -49,9 +49,14 @@ function setup() {
   oscD.freq(freqD);
   oscD.amp(0);
   oscD.start();
+  
+  fill('pink');
+  rect(320,0,80,80);
+  fill('white');
+  text('CLICK', 340,30);
+  text('FOR', 340, 45);
+  text('NOTES',340,60);
 }
-
-
 
 function draw() {
   noStroke();
@@ -152,19 +157,7 @@ function keyReleased() {
 }
 
 function mouseClicked() {
-  if (playingC) {
-    fill('white');
-  	text('next, press G',180,20);
-  } else if (playingA) {
-    fill('white');
-    text('next press G',180,20);
-  } else if (playingF) {
-    fill('white');
-    text('next press E',180,20);
-  } else if (playingE) {
-    fill('white');
-    text('next press D',180,20);
-  }
+	fill('white');
+  text('ccggaag ffeeddc ggffeed ggffeed ccggaag ffeeddc', 10,20);
 }
-
 
