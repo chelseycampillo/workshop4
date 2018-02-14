@@ -22,7 +22,6 @@
     sustain "pedal"
     vibrato, or ASDR
     fugue machine
-
 */
 
 
@@ -84,11 +83,16 @@ function draw() {
   fill(220);
 	if (playingC) {
     fill(34,233,100);
-    ellipse(50,50, 25,25); cc
+    ellipse(50,50, 25,25); 
+    fill('white');
+    text('C', 45, 50);
   }
   if (playingG) {
-    fill('red');
-    rect(width/4, 0, width/4, height);
+    fill(52, 123, 229);
+    ellipse(80, 100, 80, 80);
+    fill('white');
+    text('G', 80, 100);
+    
   }
   if (playingA) {
     rect(width/2, 0, width/4, height);
